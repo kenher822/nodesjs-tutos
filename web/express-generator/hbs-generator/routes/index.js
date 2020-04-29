@@ -1,9 +1,25 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+let personas = [{
+        id: 1,
+        nombre: "Mitocode"
+    },
+    {
+        id: 2,
+        nombre: "Mito"
+    },
+    {
+        id: 3,
+        nombre: "Code"
+    },
+]
+
+
+router.get('/', (req, res) => {
+    res.render(
+        'index', { titulo: 'Handlebars', mensaje: 'Mitocode Handlebars | Kennett', personas: personas });
 });
+
 
 module.exports = router;
